@@ -87,27 +87,3 @@ jobs:
           path: |
             dist/*.AppImage
         if: matrix.os == 'ubuntu-latest' && contains(github.event.head_commit.message, '[build]')
-
-      - name: Publish Linux DEB
-        uses: actions/upload-artifact@v3
-        with:
-          name: greenlight-linux.deb
-          path: |
-            dist/*.deb
-        if: matrix.os == 'ubuntu-latest' && contains(github.event.head_commit.message, '[build]')
-
-      - name: Publish Mac DMG
-        uses: actions/upload-artifact@v3
-        with:
-          name: greenlight-macos.dmg
-          path: |
-            dist/*.dmg
-        if: matrix.os == 'macos-latest' && contains(github.event.head_commit.message, '[build]')
-
-      - name: Publish Windows EXE
-        uses: actions/upload-artifact@v3
-        with:
-          name: greenlight-win.zip
-          path: |
-            dist/*.exe
-        if: matrix.os == 'windows-latest' && contains(github.event.head_commit.message, '[build]')
